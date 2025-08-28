@@ -1,1 +1,1 @@
-{"root":["./src/electron/main.ts","./src/ui/app.tsx","./src/ui/main.tsx","./src/ui/vite-env.d.ts"],"version":"5.8.3"}
+{"root":["./src/electron/main.ts","./src/electron/preload.ts","./src/electron/util.ts","./src/renderer/app.tsx","./src/renderer/main.tsx","./src/renderer/vite-env.d.ts"],"version":"5.9.2"}

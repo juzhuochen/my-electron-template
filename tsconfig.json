@@ -12,11 +12,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*",
-    "!src/electron/**/*"  // 排除 Electron 代码
+    "!src/electron/**/*" // 排除 Electron 代码
   ],
   "exclude": ["node_modules", "dist-react", "dist-electron"]
 }

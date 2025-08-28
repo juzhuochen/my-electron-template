@@ -1,12 +1,12 @@
 {
-    "appId": "com.example.electron-course",
-    "files": ["dist-electron", "dist-react"],
-    "icon": "./icon.png",
-    "linux": {
-        "target": "AppImage",
-        "category": "Utility"
-    },
-    "win":{
-        "target": ["msi"]
-    }
+  "appId": "com.example.electron-course",
+  "files": ["dist-electron", "dist-react"],
+  "icon": "./icon.png",
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
+  },
+  "win": {
+    "target": ["msi"]
+  }
 }

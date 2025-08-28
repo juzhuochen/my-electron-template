@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"src\\renderer\\App.js\" \"src\\renderer\\main.js\")",
+      "Bash(npm run transpile:electron:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
