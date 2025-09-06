@@ -2,13 +2,12 @@
   "compilerOptions": {
     "strict": true,
     "target": "ES2022",
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "outDir": "../../dist-electron",
+    "outDir": "../../dist-electron/electron",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["**/*.ts"],
-  "exclude": ["./preload.ts"]
+  "include": ["./preload.ts"]
 }

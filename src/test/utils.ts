@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
-import { ReactElement } from 'react';
+import { render } from "@testing-library/react";
+import { ReactElement } from "react";
 
 // Custom render function with common providers
 export const renderWithProviders = (ui: ReactElement) => {
@@ -15,7 +15,7 @@ export const mockElectronAPI = {
 };
 
 // Setup mock for window.electronAPI
-Object.defineProperty(window, 'electronAPI', {
+Object.defineProperty(window, "electronAPI", {
   value: mockElectronAPI,
   writable: true,
 });

@@ -1,23 +1,24 @@
-import { contextBridge, ipcRenderer } from 'electron';
+import { contextBridge, ipcRenderer } from "electron";
+import { IPC_EVENTS } from "../shared/types";
 
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object
-contextBridge.exposeInMainWorld('electronAPI', {
-  openFile: () => ipcRenderer.invoke('dialog:openFile'),
-  onMenuFileOpen: (callback: () => void) =>
-    ipcRenderer.on('menu-file-open', callback),
-  onMenuFileNew: (callback: () => void) =>
-    ipcRenderer.on('menu-file-new', callback),
-  // Add more API methods as needed
+contextBridge.exposeInMainWorld("electronAPI", {
+  getAppInfo: () => ipcRenderer.invoke(IPC_EVENTS.GET_APP_INFO),
 });
 
-// Define types for TypeScript
+// Global type declarations
 declare global {
   interface Window {
     electronAPI: {
       openFile: () => Promise<string>;
       onMenuFileOpen: (callback: () => void) => void;
       onMenuFileNew: (callback: () => void) => void;
+      getAppInfo: () => Promise<
+        import("../shared/types").IpcResponse<import("../shared/types").AppInfo>
+      >;
     };
   }
 }
+
+export {}; // Make this file a module

@@ -1,9 +1,14 @@
 {
-  "name": "electron-course",
+  "name": "electron-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "my custom template",
+  "author": {
+    "name": "Juzhuo",
+    "email": "JuzhuoChen@gmail.com"
+  },
   "type": "module",
-  "main": "dist-electron/main.js",
+  "main": "dist-electron/electron/main.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:react dev:electron",
     "dev:react": "vite",
@@ -18,13 +23,16 @@
     "test:coverage": "jest --coverage",
     "type-check": "tsc --noEmit",
     "preview": "vite preview",
-    "transpile:electron": "tsc --project src/electron/tsconfig.json",
+    "transpile:electron": "tsc --project src/electron/tsconfig.json && tsc --project src/electron/tsconfig.preload.json",
     "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64",
     "dist:linux": "npm run transpile:electron && npm run build && electron-builder --linux --x64",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
   "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "better-sqlite3": "^12.2.0",
+    "electron-log": "^5.4.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
